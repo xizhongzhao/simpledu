@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint,render_template
 from simpledu.models import Course
 
 front = Blueprint('front',__name__)

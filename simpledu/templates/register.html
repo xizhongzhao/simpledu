@@ -1,4 +1,25 @@
 {% extends "base.html" %}
+{% block title %}
+Register
+{%endblock%}
 {% block body %}
-<h1>Register Page</h1>
+<h2>Register Page</h2>
+<div class="form">
+  <form method="POST" action="{{ url_for('front.register') }}">
+    {{ from.csrf_token }}
+    <div class="form-group">
+        {{ form.username.label }} {{ form.username(class='form-control') }}
+    </div> 
+    <div class="form-group">
+        {{ form.username.label }} {{form.username(class='form-control') }}
+    </div>    
+    <div class="form-group">
+        {{ form.password.label }} {{ form.password(class='form-control') }}
+    </div> 
+    <div class="form-group">
+        {{ form.repeat_password.label }} {{ form.repeat_password(class='form-control') }} 
+    </div> 
+    {{ form.sumit(class='btn btn-primary',type='submit') }}
+  </form>
+</div>
 {% endblock %}

@@ -7,10 +7,10 @@ class RegisterForm(FlaskForm):
     email = StringField('email',validators=[Required(),Email(message = 'please input corecctor email!')])
     password = PasswordField('password',validators=[Required(),Length(6,24)])
     repeat_password = PasswordField('repeat password',validators=[Required(),EqualTo('password')])
-    submit = SubmitField('sumit')
+    submit = SubmitField('submit')
 
 class LoginForm(FlaskForm):
     email = StringField('email',validators = [Required(),Email(message='please input corecctor email!')])
     password = PasswordField('password',validators=[Required(),Length(6,24)])
     remember_me = BooleanField('remember me!')
-    sumit = SubmitField('summit')
+    submit = SubmitField('submit')

@@ -1,6 +1,6 @@
 from flask import Blueprint,render_template
 from simpledu.models import Course
-from simpledu.forms import LoginForm,RegiterForm
+from simpledu.forms import LoginForm,RegisterForm
 
 front = Blueprint('front',__name__)
 

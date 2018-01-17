@@ -8,6 +8,15 @@ class RegisterForm(FlaskForm):
     password = PasswordField('password',validators=[Required(),Length(6,24)])
     repeat_password = PasswordField('repeat password',validators=[Required(),EqualTo('password')])
     submit = SubmitField('submit')
+    
+    def create_user(self):
+        user = User()
+        user.username = self.username.data
+        user.email = self.email.data
+        user.password = self.password.data
+        db.session.add(user)
+        db.session.commit()
+        return user
 
 class LoginForm(FlaskForm):
     email = StringField('email',validators = [Required(),Email(message='please input corecctor email!')])
